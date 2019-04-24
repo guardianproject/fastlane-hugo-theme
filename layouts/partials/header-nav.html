@@ -25,4 +25,33 @@
       <a href="{{ .URL }}" class="btn">{{ .Name }}</a>
     {{ end }}
   </nav>
+    {{ if .Site.IsMultiLingual }}
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right" style="list-style-type: none;">
+      {{ if ge (len .Site.Languages) 3 }}
+        <li class="navlinks-container">
+          <a class="navlinks-parent">{{ index $.Site.Data.languageNames $.Site.Language.Lang }}</a>
+          <div class="navlinks-children">
+            {{ range .Site.Languages }}
+            {{ if not (eq .Lang $.Site.Language.Lang) }}
+            <a href="/{{ .Lang }}" lang="{{ .Lang }}">{{ index $.Site.Data.languageNames .Lang }}</a>
+            {{ end }}
+            {{ end }}
+          </div>
+        </li>
+      {{ else }}
+        <li>
+          {{ range .Site.Languages }}
+        {{ if not (eq .Lang $.Site.Language.Lang) }}
+          <a href="/{{ .Lang }}" lang="{{ .Lang }}">{{ default .Lang .LanguageName }}</a>
+        {{ end }}
+          {{ end }}
+        </li>
+	{{ end }}
+	</ul>
+      </div>
+      </nav>
+    {{ end }}
 </section>
