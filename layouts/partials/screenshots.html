@@ -1,0 +1,40 @@
+{{- $fastlaneDir := $.Site.Params.fastlaneDir -}}
+<style>
+  div.gallery {
+      display: flex;
+      flex-wrap: wrap;
+  }
+  div.gallery a {
+      flex-grow: 1;
+      object-fit: cover;
+      margin: 2px;
+      display: flex;
+  }
+
+  div.gallery a img {
+      height: 200px;
+      object-fit: cover;
+      flex-grow: 1;
+  }
+</style>
+<link rel="stylesheet" href="css/jquery.fancybox-3.4.0.min.css" />
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/jquery.fancybox.min.js"></script>
+<div class="gallery">
+  {{ $.Scratch.Set "languageCode" $.Site.Params.fallbackLanguageCode }}
+  {{ if (fileExists (path.Join $fastlaneDir $.Site.LanguageCode "images")) }}
+  {{ $.Scratch.Set "languageCode" $.Site.LanguageCode }}
+  {{ end }}
+  {{ $languageCode := $.Scratch.Get "languageCode" }}
+  {{ range (readDir (path.Join $fastlaneDir $languageCode "images")) }}
+  {{ if in .Name "Screenshots" }}
+  {{ $urlPath := path.Join $languageCode "images" .Name }}
+  {{ $path := path.Join $fastlaneDir $urlPath }}
+  {{ if (fileExists $path) }}
+  {{ range (readDir $path)  }}
+  {{ $src := path.Join $urlPath .Name }}
+  <a data-fancybox="gallery" href="../{{ $src }}">
+    <img src="../{{ $src }}">  <br/>
+  </a>
+  {{ end }}{{ end }}{{ end }}{{ end }}
+</div>
