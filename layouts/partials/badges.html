@@ -1,0 +1,20 @@
+<div class="badges">
+{{ if .Site.Params.fdroid }}
+<a href="https://f-droid.org/packages/{{ .Site.Params.fdroid }}/" target="_blank">
+  {{ if .Site.Params.selfHosted }}
+  <img src="/img/get-it-on-fdroid.png" alt="Get it on F-Droid" height="80"/>
+  {{ else }}
+  <img src="https://f-droid.org/badge/get-it-on-{{ .Lang }}.png" alt="Get it on F-Droid" height="80"/>
+  {{ end }}
+</a>
+{{ end }}
+{{ if .Site.Params.googleplay }}
+<a href="https://play.google.com/store/apps/details?id={{ .Site.Params.googleplay }}/" target="_blank">
+  {{ if .Site.Params.selfHosted }}
+  <img src="/img/en-play-badge.png" alt="Get it on Google Play" height="80"/>
+  {{ else }}
+  <img src="https://play.google.com/intl/en_us/badges/images/generic/{{ .Lang | lower }}_badge_web_generic.png" alt="Get it on Google Play" height="80"/>
+  {{ end }}
+</a>
+{{ end }}
+</div>

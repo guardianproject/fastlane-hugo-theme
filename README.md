@@ -46,6 +46,8 @@ params:
   selfHosted: true
   fastlaneDir: metadata
   fallbackLanguageCode: en-US
+  googleplay: my.app.id
+  fdroid: my.app.id
 
 # setup the languages supported by this site
 defaultContentLanguage: en
