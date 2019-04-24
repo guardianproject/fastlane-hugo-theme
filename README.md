@@ -26,6 +26,44 @@ From the root of your site:
 git submodule update --remote --merge
 ```
 
+## Setup
+
+
+```yaml
+theme: fastlane-hugo-theme
+
+# set the Fastlane metadata dir as the contentDir
+contentDir: fastlane/android/metadata
+
+staticDirs:
+ - app/src/main/res
+
+# the title will serve as the default, when the title hasn't been translated
+title: MyAwesomeApp
+
+# some customizations
+params:
+  selfHosted: true
+  fastlaneDir: metadata
+  fallbackLanguageCode: en-US
+
+# setup the languages supported by this site
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: true
+languages:
+  ar:
+    languageCode: ar
+  de:
+    languageCode: de
+  en:
+    languageCode: en-US
+
+# it is possible to customize the Markdown parsing
+blackfriday:
+  extensions:
+    - hardLineBreak
+```
+
 ## Credits
 
 Thank you to [Zachary Betz](https://zwbetz.com/) for creating the [Cayman-Hugo-Theme](https://github.com/zwbetz-gh/cayman-hugo-theme).  Thank you to [Jason Long](https://github.com/jasonlong) for creating the original Jekyll [Cayman Theme](https://github.com/jasonlong/cayman-theme). 
