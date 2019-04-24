@@ -1,0 +1,12 @@
+{{- $name := "full_description.txt" -}}
+{{- $fastlaneDir := $.Site.Params.fastlaneDir -}}
+
+{{- $path := path.Join $fastlaneDir $.Site.LanguageCode $name -}}
+{{- $fallbackPath := path.Join $fastlaneDir $.Site.Params.fallbackLanguageCode $name -}}
+{{- if (fileExists $path) -}}
+  {{- readFile $path | markdownify -}}
+{{- else if (fileExists $fallbackPath) -}}
+  {{- readFile $fallbackPath | markdownify -}}
+{{- else -}}
+  Missing {{ $name }} from {{ $path }}
+{{- end -}}
