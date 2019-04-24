@@ -45,7 +45,7 @@
         <li>
           {{ range .Site.Languages }}
         {{ if not (eq .Lang $.Site.Language.Lang) }}
-          <a href="/{{ .Lang }}" lang="{{ .Lang }}">{{ default .Lang .LanguageName }}</a>
+          <a href="/{{ .Lang }}" lang="{{ .Lang }}">{{ index $.Site.Data.languageNames .Lang }}</a>
         {{ end }}
           {{ end }}
         </li>
