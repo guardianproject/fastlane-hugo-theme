@@ -1,9 +1,19 @@
 <section class="page-header">
   <h1 class="project-name">
-    {{ $.Site.Params.project_name | default "project_name goes here" | markdownify }}
+    {{ $titleFile := (path.Join .Site.Params.fastlaneDir .Site.LanguageCode "title.txt") }}
+    {{ if (fileExists $titleFile) }}
+    {{ readFile $titleFile | markdownify }}
+    {{ else }}
+    {{ .Title | default "title does here"| markdownify }}
+    {{ end }}
   </h1>
   <h2 class="project-tagline">
-    {{ $.Site.Params.project_tagline | default "project_tagline goes here" | markdownify }}
+    {{ $subtitleFile := (path.Join .Site.Params.fastlaneDir .Site.LanguageCode "short_description.txt") }}
+    {{ if (fileExists $subtitleFile) }}
+    {{ readFile $subtitleFile | markdownify }}
+    {{ else }}
+    {{ $.Site.Params.short_description | default "Params.short_description goes here" | markdownify }}
+    {{ end }}
   </h2>
   <nav>
     {{ $current := . }}
