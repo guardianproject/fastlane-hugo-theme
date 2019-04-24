@@ -1,0 +1,17 @@
+name = "Fastlane"
+license = "CC BY 4.0"
+licenselink = "https://creativecommons.org/licenses/by/4.0/"
+description = "A theme for generating sites based on Fastlane metadata, ported from the Cayman Theme."
+homepage = "https://github.com/guardianproject/fastlane-hugo-theme"
+tags = ["blog", "clean", "color configuration"]
+features = ["blog", "clean", "color configuration", "fastlane"]
+min_version = "0.54.0"
+
+[author]
+  name = "Hans-Christoph Steiner"
+  homepage = "https://guardianproject.info/"
+
+[original]
+  name = "Cayman"
+  homepage = "https://github.com/zwbetz-gh/cayman-theme"
+  repo = "https://github.com/zwbetz-gh/cayman-theme"
