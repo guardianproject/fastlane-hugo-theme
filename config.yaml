@@ -3,3 +3,6 @@ params:
   fastlaneDir: fastlane/android/metadata
   fallbackLanguageCode: en-US
   icLauncher: app/src/main/res/mipmap-xhdpi/ic_launcher.png
+# some other handy options:
+#  googleplay: my.app.id
+#  fdroid: my.app.id
