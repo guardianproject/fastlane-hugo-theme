@@ -17,20 +17,21 @@
   cy: Cymraeg
   da: dansk
   de: Deutsch
-  de_AT: Österreichisches Deutsch
-  de_CH: Schweizer Hochdeutsch
+  de-at: Österreichisches Deutsch
+  de-ch: Schweizer Hochdeutsch
   dz: རྫོང་ཁ
   ee: eʋegbe
   el: Ελληνικά
   en: English
-  en_AU: Australian English
-  en_CA: Canadian English
-  en_GB: British English
-  en_US: American English
+  en-au: Australian English
+  en-ca: Canadian English
+  en-gb: British English
+  en-us: American English
   eo: esperanto
   es: español
-  es_ES: español de España
-  es_MX: español de México
+  es-ar: español de Argentina
+  es-es: castellano
+  es-mx: español de México
   et: eesti
   eu: euskara
   fa: فارسی
@@ -38,8 +39,8 @@
   fi: suomi
   fo: føroyskt
   fr: français
-  fr_CA: français canadien
-  fr_CH: français suisse
+  fr-ca: français canadien
+  fr-ch: français suisse
   fy: West-Frysk
   ga: Gaeilge
   gd: Gàidhlig
@@ -90,9 +91,9 @@
   nd: isiNdebele
   ne: नेपाली
   nl: Nederlands
-  nl_BE: Vlaams
+  nl-be: Vlaams
   nn: nynorsk
-  no: norsk
+  "no": norsk
   om: Oromoo
   or: ଓଡ଼ିଆ
   os: ирон
@@ -100,13 +101,13 @@
   pl: polski
   ps: پښتو
   pt: português
-  pt_BR: português do Brasil
-  pt_PT: português europeu
+  pt-br: português do Brasil
+  pt-pt: português europeu
   qu: Runasimi
   rm: rumantsch
   rn: Ikirundi
   ro: română
-  ro_MD: moldovenească
+  ro-md: moldovenească
   ru: русский
   rw: Kinyarwanda
   se: davvisámegiella
@@ -136,9 +137,9 @@
   yi: ייִדיש
   yo: Èdè Yorùbá
   zh: 中文
-  zh_Hans: 简体中文
-  zh_Hant: 繁體中文
-  zh_CN: 中文(简体)
-  zh_HK: 中文(香港)
-  zh_TW: 中文(台灣)
+  zh-hans: 简体中文
+  zh-hant: 繁體中文
+  zh-cn: 中文(简体)
+  zh-hk: 中文(香港)
+  zh-tw: 中文(台灣)
   zu: isiZulu
