@@ -29,4 +29,29 @@
   {{ end }}
 </a>
 {{ end }}
+
+{{ if .Site.Params.github }}
+<a href="https://github.com/{{ .Site.Params.github }}" target="_blank">
+  <img src="../img/view-on-github.png" alt="View on GitHub" height="80"/>
+</a>
+{{ else if (in .Site.BaseURL ".github.io/") }}
+{{ $groupname := (index (split (index (split .Site.BaseURL "/") 2) ".") 0) }}
+{{ $projectname := (index (split .Site.BaseURL "/") 3) }}
+<a href="https://github.com/{{ $groupname }}/{{ $projectname }}" target="_blank">
+  <img src="../img/view-on-github.png" alt="View on GitHub" height="80"/>
+</a>
+{{ end }}
+
+{{ if .Site.Params.gitlab }}
+<a href="https://gitlab.com/{{ .Site.Params.gitlab }}" target="_blank">
+  <img src="../img/view-on-gitlab.svg" alt="View on GitLab" height="80"/>
+</a>
+{{ else if (in .Site.BaseURL ".gitlab.io/") }}
+{{ $groupname := (index (split (index (split .Site.BaseURL "/") 2) ".") 0) }}
+{{ $projectname := (index (split .Site.BaseURL "/") 3) }}
+<a href="https://gitlab.com/{{ $groupname }}/{{ $projectname }}" target="_blank">
+  <img src="../img/view-on-gitlab.svg" alt="View on GitLab" height="80"/>
+</a>
+{{ end }}
+
 </div>

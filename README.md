@@ -48,6 +48,7 @@ params:
   fallbackLanguageCode: en-US
   googleplay: my.app.id
   fdroid: my.app.id
+  github: me/myapp
 
 # setup the languages supported by this site
 defaultContentLanguage: en

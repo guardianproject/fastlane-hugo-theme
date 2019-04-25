@@ -4,5 +4,7 @@ params:
   fallbackLanguageCode: en-US
   icLauncher: app/src/main/res/mipmap-xhdpi/ic_launcher.png
 # some other handy options:
+#  github: guardianproject/ripple
+#  gitlab: guardianproject/ripple
 #  googleplay: my.app.id
 #  fdroid: my.app.id
