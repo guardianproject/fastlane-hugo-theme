@@ -105,7 +105,7 @@ a {
   background-color: $header-bg-color;
   background-image: 
   {{ if $.Site.Params.featureGraphic }}{{ printf "url(%s), " $.Site.Params.featureGraphic }}{{ end }}
-  {{ if $.Site.Params.fallbackLanguageCode }}{{ printf "url(/%s/images/featureGraphic.png), " $.Site.Params.fallbackLanguageCode }}{{ end }}
+  {{ if $.Site.Params.fallbackLanguageCode }}{{ printf "url(../%s/images/featureGraphic.png), " $.Site.Params.fallbackLanguageCode }}{{ end }}
   linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
 
   @include large {
