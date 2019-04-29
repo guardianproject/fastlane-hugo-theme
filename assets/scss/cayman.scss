@@ -3,13 +3,13 @@ $large-breakpoint: {{ $.Site.Params.large_breakpoint | default "64em" }} !defaul
 $medium-breakpoint: {{ $.Site.Params.medium_breakpoint | default "42em" }} !default;
 
 // Headers
-$header-heading-color: {{ $.Site.Params.header_heading_color | default "#fff" }} !default; 
-$header-bg-color: {{ $.Site.Params.header_background_color | default "#159957" }} !default;
-$header-bg-color-secondary: {{ $.Site.Params.header_background_color_secondary | default "#155799" }} !default;
+$header-heading-color: {{ $.Site.Params.header_heading_color | default "#101216" }} !default; 
+$header-bg-color: {{ $.Site.Params.header_background_color | default "#fff" }} !default;
+$header-bg-color-secondary: {{ $.Site.Params.header_background_color_secondary | default "#fff" }} !default;
 
 // Text
-$section-headings-color: {{ $.Site.Params.section_headings_color | default "#159957" }} !default;
-$body-text-color: {{ $.Site.Params.body_text_color | default "#606c71" }} !default;
+$section-headings-color: {{ $.Site.Params.section_headings_color | default "#101216" }} !default;
+$body-text-color: {{ $.Site.Params.body_text_color | default "#303639" }} !default;
 $body-link-color: {{ $.Site.Params.body_link_color | default "#1e6bb8" }} !default;
 $blockquote-text-color: {{ $.Site.Params.blockquote_text_color | default "#819198" }} !default;
 
@@ -99,26 +99,44 @@ a {
   }
 }
 
+{{ if not .Site.Params.featureGraphicOverlay }}
+.feature-graphic {
+  background-color: $header-bg-color;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 0;
+  padding-top: 48.83%; /* (img-height / img-width * container-width) */   /* (500 / 1024 * 100) */
+  background-image:
+  {{ if $.Site.Params.featureGraphic }}{{ printf "url(%s), " $.Site.Params.featureGraphic }}{{ end }}
+  {{ if $.Site.Params.fallbackLanguageCode }}{{ printf "url(../%s/images/featureGraphic.png), " $.Site.Params.fallbackLanguageCode }}{{ end }}
+  linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
+}
+{{ end }}
+
 .page-header {
   color: $header-heading-color;
   text-align: center;
   background-color: $header-bg-color;
-  background-image: 
+{{ if .Site.Params.featureGraphicOverlay }}
+  background-repeat: no-repeat;
+  background-image:
   {{ if $.Site.Params.featureGraphic }}{{ printf "url(%s), " $.Site.Params.featureGraphic }}{{ end }}
   {{ if $.Site.Params.fallbackLanguageCode }}{{ printf "url(../%s/images/featureGraphic.png), " $.Site.Params.fallbackLanguageCode }}{{ end }}
   linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
 
   @include large {
-    padding: 5rem 6rem;
+    padding: 35rem 6rem 0rem 6rem;
   }
 
   @include medium {
-    padding: 3rem 4rem;
+    padding: 22rem 4rem 0rem 4rem;
   }
 
   @include small {
-    padding: 2rem 1rem;
+    padding: 15rem 1rem 0rem 1rem;
   }
+{{ end }}
 }
 
 .project-name {
