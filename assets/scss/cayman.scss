@@ -126,15 +126,15 @@ a {
   linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
 
   @include large {
-    padding: 35rem 6rem 0rem 6rem;
+    padding: 36rem 6rem 0rem 6rem;
   }
 
   @include medium {
-    padding: 22rem 4rem 0rem 4rem;
+    padding: 23rem 4rem 0rem 4rem;
   }
 
   @include small {
-    padding: 15rem 1rem 0rem 1rem;
+    padding: 16rem 1rem 0rem 1rem;
   }
 {{ end }}
 }
@@ -157,9 +157,7 @@ a {
 }
 
 .project-tagline {
-  margin-bottom: 2rem;
   font-weight: normal;
-  opacity: 0.7;
 
   @include large {
     font-size: 1.25rem;
@@ -183,18 +181,18 @@ a {
 
   @include large {
     max-width: 64rem;
-    padding: 2rem 6rem;
+    padding: 0.5rem 6rem;
     margin: 0 auto;
     font-size: 1.1rem;
   }
 
   @include medium {
-    padding: 2rem 4rem;
+    padding: 0.5rem 4rem;
     font-size: 1.1rem;
   }
 
   @include small {
-    padding: 2rem 1rem;
+    padding: 0.5rem 1rem;
     font-size: 1rem;
   }
 

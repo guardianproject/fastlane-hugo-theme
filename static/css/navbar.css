@@ -27,7 +27,6 @@
   transition: padding .5s ease-in-out;
 }
 .navbar-custom .navbar-brand-logo img {
-  height: 50px;
   -webkit-transition: height .5s ease-in-out;
   -moz-transition: height .5s ease-in-out;
   transition: height .5s ease-in-out;
@@ -117,8 +116,6 @@
 }
 .navbar-custom .nav .navlinks-container .navlinks-children a {
   display: block;
-  padding: 2px;
-  padding-left: 30px;
   background: #f5f5f5;
   text-decoration: none !important;
   border-width: 0 1px 1px 1px;
