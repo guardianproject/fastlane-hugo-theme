@@ -1,6 +1,6 @@
 
 params:
-  fastlaneDir: fastlane/android/metadata
+  fastlaneDir: fastlane/metadata/android
   fallbackLanguageCode: en-US
   icLauncher: app/src/main/res/mipmap-xhdpi/ic_launcher.png
   featureGraphicOverlay: false
